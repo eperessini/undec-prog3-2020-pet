@@ -17,10 +17,14 @@ public class CreateClientUnitUseCaseTest {
     @Mock
     ICreateClientRepository createClientRepository;
 
+
+
     @Test
     void createClient_ClientDoesntExist_CreateClient(){
-        Client client = Client.instance("Emiliano Peressini", "B° Padre Inestal Urbano 19 nro. 22", 33707738, LocalDate.of(1988, 5,12));
+
+        Client client = Client.instance("Emiliano Peressini", "B° Padre Inestal Urbano 19 nro. 22", 33707738, LocalDate.of(1988, 5,12), null);
         CreateClientUseCase createClientUseCase = new CreateClientUseCase(createClientRepository);
+
 
         //Simulacion BD
         when(createClientRepository.exists(client.getId())).thenReturn(false);
@@ -29,8 +33,6 @@ public class CreateClientUnitUseCaseTest {
         //Act
 
         boolean result = createClientUseCase.createClient(client);
-
-
 
         //Assert
         Assertions.assertTrue(result);

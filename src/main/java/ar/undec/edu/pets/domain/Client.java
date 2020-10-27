@@ -7,16 +7,18 @@ public class Client {
     String adress;
     int id;
     LocalDate birthDate;
+    Pet pet;
 
-    private Client(String fullName, String adress, int id, LocalDate birthDate) {
+    private Client(String fullName, String adress, int id, LocalDate birthDate, Pet pet) {
         this.fullName = fullName;
         this.adress = adress;
         this.id = id;
         this.birthDate = birthDate;
+        this.pet = pet;
     }
 
-    public static Client instance(String fullName, String adress, int id, LocalDate birthDate) {
-        return new Client (fullName, adress, id, birthDate);
+    public static Client instance(String fullName, String adress, int id, LocalDate birthDate, Pet pet) {
+        return new Client (fullName, adress, id, birthDate, pet);
     }
 
     public String getFullName() {
@@ -49,5 +51,13 @@ public class Client {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setpet(Pet pet) {
+        this.pet = pet;
     }
 }
