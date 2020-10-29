@@ -42,7 +42,7 @@ public class CreatePetUnitUseCaseTest {
     }
 
     @Test
-    void createPetPetExistDontCreatePet(){
+    void createPetPetExistDontCreatePet() throws PetExistException {
         Pet pet = Pet.instance("Magnus", "Labrador Mix", LocalDate.of(2019,2,2));
         CreatePetUseCase createPetUseCase = new CreatePetUseCase(createPetRepository);
 

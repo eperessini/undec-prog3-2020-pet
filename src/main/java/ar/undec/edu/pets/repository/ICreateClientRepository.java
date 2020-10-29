@@ -6,5 +6,5 @@ import ar.undec.edu.pets.domain.Pet;
 public interface ICreateClientRepository {
     boolean exists(int clientId);
     boolean saveClient(Client client);
-    boolean checkClientPet(Pet pet);
+
 }

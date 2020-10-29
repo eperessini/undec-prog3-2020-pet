@@ -47,12 +47,8 @@ public class CreateClientUnitUseCaseTest {
 
 
         //Simulacion BD
-        when(createClientRepository.exists(client.getId())).thenReturn(true);
-
-
-        //Act
-
-        boolean result = createClientUseCase.createClient(client);
+        //when(createClientRepository.exists(client.getId())).thenReturn(true);
+        when(createClientRepository.exists(33707738)).thenReturn(true);
 
         //Assert
         Assertions.assertThrows(ClientExistException.class, ()->createClientUseCase.createClient(client));

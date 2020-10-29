@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Pet {
 
+    public LocalDate getBirthDate;
     private String name;
     private String breed;
     private LocalDate birthDate;
@@ -21,5 +22,11 @@ public class Pet {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBreed() { return breed;
+    }
+
+    public LocalDate getBirthDate() { return birthDate;
     }
 }
